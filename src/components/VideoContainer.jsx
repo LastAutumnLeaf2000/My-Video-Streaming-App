@@ -11,13 +11,12 @@ import { deleteText } from "../utils/searchTextSlice";
 const VideoContainer = () => {
   const dispatch = useDispatch()
   const text = useSelector(store=>store.text.text)
-  console.log(text)
+  //console.log(text)//store searchtext data
 
   const [videos, setvideos] = useState(null);
   const [allVideosToSearch, setallVideosToSearch] = useState(null);
 
   useEffect(() => {
-    console.log("useState")
     fetchData();
   }, []);
 

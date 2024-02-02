@@ -13,15 +13,15 @@ const LiveChat = () => {
   const avatar = new AvatarGenerator();
 
   const chatMsz = useSelector((store) => store.liveChat.messages);
+  //console.log(chatMsz); //live messages
 
-  console.log(chatMsz);
   const dispatch = useDispatch();
   useEffect(() => {
     const timer = setInterval(() => {
       const img = avatar.generateRandomAvatar();
       const name = chance.first({ nationality: "en" }); //generates first name
       const sentence = chance.sentence({ words: 4 });
-      console.log(img);
+      //console.log(img);
       // console.log(sentence);
       // console.log("API Polling");//fetchData
       dispatch(
@@ -55,13 +55,13 @@ const LiveChat = () => {
           <h1 className="font-bold text-xl mb-2 ">LiveChat</h1>
           <form onSubmit={handleLiveChat}>
             <input
-              class="shadow appearance-none border rounded py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="What's on your mind!"
               onChange={(e) => setchat(e.target.value)} value={chat}
             />
             <button
               type="submit"
-              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2"
+              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2"
             >
               Submit
             </button>

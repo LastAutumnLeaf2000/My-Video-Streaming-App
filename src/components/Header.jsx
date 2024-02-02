@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import axios from "axios";
-import { YOUTUBE_VIDEO_SEARCH_API } from "../utils/constants";
+import { RANDOM_SEARCH_API, YOUTUBE_VIDEO_SEARCH_API } from "../utils/constants";
 import { addToCache } from "../utils/searchSlice";
 import { addText } from "../utils/searchTextSlice";
 
@@ -34,10 +34,13 @@ const Header = () => {
 
   const fetchSearch = async () => {
     try{
-    const json = await axios.get(YOUTUBE_VIDEO_SEARCH_API + searchQuerry);
-    //console.log(json.data[1])//search results
-    setsuggestions(json.data[1]);
+    const json = await axios.get( RANDOM_SEARCH_API+ searchQuerry);
+    //console.log(json.data)//search results
 
+    const arr = json.data.map(data=>data.show.name)
+    // console.log(arr)
+
+    setsuggestions(arr);
     dispatch(addToCache({ [searchQuerry] : suggestions }));
     }
     catch(err){

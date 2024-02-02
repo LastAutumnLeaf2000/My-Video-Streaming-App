@@ -12,3 +12,6 @@ export const YOUTUBE_VIDEO_API =
 
 export const YOUTUBE_VIDEO_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+
+  export const RANDOM_SEARCH_API = "https://api.tvmaze.com/search/shows?q="
