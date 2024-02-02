@@ -33,11 +33,16 @@ const Header = () => {
   }, [searchQuerry]);
 
   const fetchSearch = async () => {
+    try{
     const json = await axios.get(YOUTUBE_VIDEO_SEARCH_API + searchQuerry);
     //console.log(json.data[1])//search results
     setsuggestions(json.data[1]);
 
     dispatch(addToCache({ [searchQuerry] : suggestions }));
+    }
+    catch(err){
+      console.log(err)
+    }
   };
 
   const suggestionsClicked = (e)=>{

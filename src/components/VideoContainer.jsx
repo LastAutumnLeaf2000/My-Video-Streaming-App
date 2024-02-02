@@ -22,9 +22,14 @@ const VideoContainer = () => {
   }, []);
 
   const fetchData = async () => {
+    try{
       const data = await axios.get(YOUTUBE_VIDEO_API);
       setallVideosToSearch(data.data.items)
       setvideos(data.data.items);
+    }
+    catch(err){
+      console.log(err)
+    }
   };
   
 
