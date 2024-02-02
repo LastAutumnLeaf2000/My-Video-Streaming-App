@@ -9,9 +9,9 @@ const searchText = createSlice({
     addText: (state, action) => {
       state.text = action.payload;
     },
-    deleteText:(state)=>{
-      state.text = ""
-    }
+    deleteText: (state) => {
+      state.text = "";
+    },
   },
 });
 

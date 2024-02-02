@@ -27,11 +27,17 @@ const VideoContainer = () => {
       setvideos(data.data.items);
   };
   
+
   if(text){
     let searchedVideo = allVideosToSearch.filter((video)=>video?.snippet?.title.toLowerCase().includes(text.toLowerCase()))
     setvideos(searchedVideo)
      dispatch(deleteText())
   }
+
+  if(text=="All"){ //shows all videos if user clicks on All button
+    setvideos(allVideosToSearch)
+  }
+  
   
   if (videos == null) return <div><Shimmer/></div>;
 
