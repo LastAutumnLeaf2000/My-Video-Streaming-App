@@ -50,18 +50,21 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className="flex flex-col-reverse border border-black overflow-y-scroll ml-2 h-[540px] w-full bg-gray-50 shadow-lg">
-        <div className="flex justify-between items-center mt-4 bg-gray-300 p-1">
-          <h1 className="font-bold text-xl mb-2 ">LiveChat</h1>
+      <div className="flex flex-col-reverse border border-black overflow-y-scroll h-64 lg:ml-2 lg:h-[540px] w-full bg-gray-50 shadow-lg">
+        <div className="flex justify-between items-center mt-1 lg:mt-4 bg-gray-300 p-1">
+          <h1 className="font-bold text-base lg:text-xl mb-0 lg:mb-2 ">
+            LiveChat
+          </h1>
           <form onSubmit={handleLiveChat}>
             <input
-              className="shadow appearance-none border rounded py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded py-1 lg:px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-auto"
               placeholder="What's on your mind!"
-              onChange={(e) => setchat(e.target.value)} value={chat}
+              onChange={(e) => setchat(e.target.value)}
+              value={chat}
             />
             <button
               type="submit"
-              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2"
+              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-1 text-center lg:me-2 lg:mb-2"
             >
               Submit
             </button>

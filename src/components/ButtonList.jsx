@@ -9,7 +9,7 @@ const ButtonList = () => {
   return (
   <div className='flex'>
     {
-      array.map((list,index)=><div onClick={()=>dispatch(addText(list))} key={index}><button className='bg-gray-200 px-4 py-2 ml-2 rounded-lg'>{list}</button></div>)
+      array.map((list,index)=><div onClick={()=>dispatch(addText(list))} key={index}><button className='bg-gray-200 w-0 lg:w-auto text-transparent lg:text-black lg:px-4 lg:py-2 lg:ml-2 rounded-lg'>{list}</button></div>)
     }
     </div>
   )

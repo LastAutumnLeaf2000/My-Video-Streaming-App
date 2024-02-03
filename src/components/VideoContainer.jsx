@@ -9,8 +9,8 @@ import { useDispatch } from "react-redux";
 import { deleteText } from "../utils/searchTextSlice";
 
 const VideoContainer = () => {
-  const dispatch = useDispatch()
-  const text = useSelector(store=>store.text.text)
+  const dispatch = useDispatch();
+  const text = useSelector((store) => store.text.text);
   //console.log(text)//store searchtext data
 
   const [videos, setvideos] = useState(null);
@@ -21,34 +21,43 @@ const VideoContainer = () => {
   }, []);
 
   const fetchData = async () => {
-    try{
+    try {
       const data = await axios.get(YOUTUBE_VIDEO_API);
-      setallVideosToSearch(data.data.items)
+      setallVideosToSearch(data.data.items);
       setvideos(data.data.items);
-    }
-    catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
   };
-  
 
-  if(text){
-    let searchedVideo = allVideosToSearch.filter((video)=>video?.snippet?.title.toLowerCase().includes(text.toLowerCase()))
-    setvideos(searchedVideo)
-     dispatch(deleteText())
+  if (text) {
+    let searchedVideo = allVideosToSearch.filter((video) =>
+      video?.snippet?.title.toLowerCase().includes(text.toLowerCase())
+    );
+    setvideos(searchedVideo);
+    dispatch(deleteText());
   }
 
-  if(text=="All"){ //shows all videos if user clicks on All button
-    setvideos(allVideosToSearch)
+  if (text == "All") {
+    //shows all videos if user clicks on All button
+    setvideos(allVideosToSearch);
   }
-  
-  
-  if (videos == null) return <div><Shimmer/></div>;
+
+  if (videos == null)
+    return (
+      <div>
+        <Shimmer />
+      </div>
+    );
 
   return (
-    <div className="flex flex-wrap">
+    <div className="lg:flex lg:flex-wrap">
       {videos?.map((video) => {
-        return <Link to={"/watch?v="+video.id} key={video.id}><VideoCard video={video} /></Link>;
+        return (
+          <Link to={"/watch?v=" + video.id} key={video.id}>
+            <VideoCard video={video} />
+          </Link>
+        );
       })}
     </div>
   );
