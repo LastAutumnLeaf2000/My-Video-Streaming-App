@@ -94,7 +94,7 @@ const Header = () => {
             </button>
           </form>
           {showSuggestions && searchQuerry ? (
-            <div className="absolute right-[6rem] lg:left-[29.6rem] mt-1 bg-white shadow-xl w-[11rem] lg:w-[37rem] text-start rounded-xl overflow-hidden border border-gray-100">
+            <div className="absolute right-[6.5rem] lg:left-[29.6rem] mt-1 bg-white shadow-xl w-[12rem] lg:w-[37rem] text-start rounded-xl overflow-hidden border border-gray-100">
               <ul className="my-2">
                 {suggestions?.map((data, i) => (
                   <li
