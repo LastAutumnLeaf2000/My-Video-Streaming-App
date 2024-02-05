@@ -10,8 +10,8 @@ export const YOUTUBE_VIDEO_API =
 
 // const GOOGLE_KEY2 = "&key="+GOOGLE_API_KEY
 
-export const YOUTUBE_VIDEO_SEARCH_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const YOUTUBE_VIDEO_SEARCH_API = 'https://corsproxy.org/?' + encodeURIComponent(
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=");
 
 
   export const RANDOM_SEARCH_API = "https://api.tvmaze.com/search/shows?q="
