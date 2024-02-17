@@ -13,7 +13,7 @@ const Sidebar = () => {
         <div className="w-0 lg:w-48 lg:p-5 text-transparent lg:text-black select-none lg:text-base lg:shadow-2xl">
           <ul className="font-medium">
             <Link to="/">
-              <li>🏠Home</li>
+              <li><i className="fa-solid fa-house"></i> Home</li>
             </Link>
             <li>Shorts</li>
             <li>Subsciptions</li>
